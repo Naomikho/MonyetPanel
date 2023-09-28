@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "NodeNext",
+    "composite": true,
+    "moduleResolution": "nodenext",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "declaration": true,
+    "declarationDir": "./dist",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "lib": ["es6", "dom"],
+    "resolveJsonModule": true,
+    "types": ["node"]
+  },
+  "files": [],
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist", "src/Tests"],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+@import './base.css';
+
+#app {
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-weight: normal;
+}
+
+body {
+  display: flex;
+  place-items: center;
+}
+
+.centered-element-xy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centered-element-x {
+  margin: 0 auto; /* Auto left and right margins */
+}
+
+.centered-element-inline {
+  text-align: center; /* Center text or inline elements */
+}
+
+.centered-text {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Optional: Set a height to center within the viewport */
+}
+
+.textAlignLeft {
+  text-align: left;
+}
+
+.textAlignRight {
+  text-align: right;
+}
+
+.nav {
+  color: white;
+}
+
+.navDark {
+  color: black;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
