@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 import { loadFonts } from './plugins/webfontloader'
 import '@mdi/font/css/materialdesignicons.css'
-import '@/assets/main.css'
+import '@/assets/main.scss'
 
 // Vuetify
 import 'vuetify/styles'

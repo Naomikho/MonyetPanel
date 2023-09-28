@@ -12,10 +12,18 @@ export default defineConfig({
   plugins: [
     vue(),
     vueJsx(),
-  ],
+  ], 
+  css: {
+    preprocessorOptions: {
+      // Enable Sass/SCSS support
+      scss: {
+        // Add any Sass options here
+      },
+    },
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  }
+  },
 })
