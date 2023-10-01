@@ -74,16 +74,12 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
 }
 
 @media screen and (min-width: 1024px)
 {
-  body {
-    overflow: -moz-scrollbars-none;
-    -ms-overflow-style: none;
-  }
-
-    /* Let's get this party started */
   ::-webkit-scrollbar {
     width: 12px;
   }

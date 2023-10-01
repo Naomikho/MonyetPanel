@@ -17,13 +17,14 @@
   height: 93vh;
   background-color: rgb(248, 237, 237);
   color: black;
+  overflow-y: auto;
 }
 </style>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import TopBar from "../reuseables/TopBar.vue";
-import SideBar from "../reuseables/SideBar.vue";
+import TopBar from "./TopBar.vue";
+import SideBar from "./SideBar.vue";
 
 export default defineComponent({
   name: "BaseLayout",

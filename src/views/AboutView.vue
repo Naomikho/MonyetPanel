@@ -1,6 +1,6 @@
 <template>
   <div class="about centered-element-x">
-    <h1>This is an about page</h1>
+    <h1>About MonyetPanel</h1>
   </div>
 </template>
 
