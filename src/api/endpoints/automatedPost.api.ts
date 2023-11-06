@@ -2,6 +2,10 @@ import httpClient from './httpClient.js';
 
 const END_POINT = '/automated-post';
 
+const generateHeaders = (token: string, username: string) => ({
+    'Authorization': `Bearer ${token}`,
+    'Username': username,
+  });
 
 const getAutomatedPosts = () => httpClient.get(END_POINT);
 
@@ -18,5 +22,6 @@ export {
     createdAutomatedPost,
     updateAutomatedPost,
     deleteAutomatedPost,
-    togglePostEnabled
+    togglePostEnabled,
+    generateHeaders,
 }

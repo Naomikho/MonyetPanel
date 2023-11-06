@@ -7,10 +7,10 @@
             data !== undefined && data.title !== undefined ? data.title : "Edit Name Here"
           }}
         </h2>
-        <v-btn icon id="editTitle" class="cardButton">
+        <v-btn icon id="editTitle" class="cardButton" @click="toggleEditMode">
           <v-icon>mdi-square-edit-outline</v-icon>
         </v-btn>
-        <v-btn v-if="!isEdit" icon id="deleteSchedule" class="cardButton">
+        <v-btn v-if="!isEditState" icon id="deleteSchedule" class="cardButton">
           <v-icon>mdi-delete</v-icon>
         </v-btn>
         <v-btn v-else icon id="saveSchedule" class="cardButton">
@@ -26,27 +26,32 @@
           :items="days"
           v-model="selectedDay"
           variant="solo-inverted"
+          :readonly="!isEditState"
         ></v-select>
       </div>
-      <input type="time" id="timeSelector" />
+      <input type="time" id="timeSelector" :readonly="!isEditState" />
       <br />
       <span class="inputLabel text-subtitle-1 text-medium-emphasis">Post Title</span>
       <br v-if="!isDesktop" />
       <div id="postTitleInput">
         <v-text-field
-        density="compact"
-        placeholder="e.g. Daily chat thread for $date"
-        variant="outlined">
+          density="compact"
+          placeholder="e.g. Daily chat thread for $date"
+          variant="outlined"
+          :readonly="!isEditState"
+        >
         </v-text-field>
       </div>
       <br />
       <span class="textAreaLabel text-subtitle-1 text-medium-emphasis">Content</span>
       <br v-if="!isDesktop" />
       <div id="postBodyInput">
-        <v-textarea auto-grow variant="outlined" label="Markdown format is accepted">
-        density="compact"
-        placeholder="Markdown format is accepted"
-        variant="outlined"
+        <v-textarea
+          auto-grow
+          variant="outlined"
+          label="Markdown format is accepted"
+          :readonly="!isEditState"
+        >
         </v-textarea>
       </div>
     </v-card>
@@ -175,11 +180,12 @@ export default defineComponent({
     },
     isEdit: {
       type: Boolean,
-      default: false, // Set a default value of false for isEdit
-    },
+      required: false,
+    }
   },
   data() {
     return {
+      isEditState: (this.isEdit !== undefined) ? this.isEdit : false,
       isDesktop: window.innerWidth >= 768,
       selectedDay: this.data !== undefined ? this.data.day : "Daily",
       days: ["Daily", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
@@ -194,6 +200,9 @@ export default defineComponent({
       // Update the 'isDesktop' property based on the current screen width
       this.isDesktop = window.innerWidth >= 768;
     },
+    toggleEditMode() {
+      this.isEditState = !this.isEditState;
+    }
   },
   beforeUnmount() {
     // Remove the event listener when the component is unmounted

@@ -15,7 +15,7 @@
       :data="item"
     >
     </post-scheduler-card>
-    <v-btn id="addNewSchedule"> + Add Schedule </v-btn>
+    <v-btn id="addNewSchedule" @click="addNewSchedule"> + Add Schedule </v-btn>
   </div>
 </template>
 
@@ -78,5 +78,10 @@ export default defineComponent({
       },
     },
   },
+  methods: {
+    addNewSchedule() {
+      
+    }
+  }
 });
 </script>
