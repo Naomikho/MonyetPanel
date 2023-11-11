@@ -7,7 +7,7 @@ const generateHeaders = (token: string, username: string) => ({
     'Username': username,
   });
 
-const getAutomatedPosts = () => httpClient.get(END_POINT);
+const getAutomatedPosts = (communityName: string) => httpClient.get(`${communityName}/${END_POINT}`);
 
 const createdAutomatedPost = (automatedPost: object) => httpClient.post(END_POINT, automatedPost);
 
